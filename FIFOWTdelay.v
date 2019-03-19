@@ -68,9 +68,9 @@ write:
 	 full = 1'b1;
 	 else
 	 ;
-	//@(posedge clk_in) temp1 = 1'b0;
-	//@(posedge clk_in) empty = temp1;	
-	empty = 1'b0;
+	@(posedge clk_in) temp1 = 1'b0;
+	@(posedge clk_in) empty = temp1;	
+	//empty = 1'b0;
 	wt_next_state = wt_idle;
 	
 	end
@@ -140,9 +140,9 @@ read:
 	 if( rd_cycle == wt_cycle)	 
 	 empty = 1'b1;	
 	 else ;
-	//@(posedge clk_in) temp2 = 1'b0;
-	//@(posedge clk_in) full = temp2;	
-	full = 1'b0;
+	@(posedge clk_in) temp2 = 1'b0;
+	@(posedge clk_in) full = temp2;	
+	//full = 1'b0;
 	rd_next_state = rd_idle;
 	
 	end
